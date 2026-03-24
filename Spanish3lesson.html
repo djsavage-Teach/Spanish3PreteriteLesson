@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Olympic Chronicles | Insta-Story Hub</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #fafafa;
+            color: #262626;
+        }
+        h1, h2 {
+            font-family: 'Playfair Display', serif;
+        }
+        .canva-wrapper {
+            position: relative; 
+            width: 100%; 
+            height: 0; 
+            padding-top: 56.2500%;
+            padding-bottom: 0; 
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1); 
+            margin-top: 1.6em; 
+            margin-bottom: 0.9em; 
+            overflow: hidden;
+            border-radius: 8px; 
+            will-change: transform;
+            background: #efefef;
+        }
+        .insta-card {
+            background: white;
+            border: 1px solid #dbdbdb;
+            border-radius: 8px;
+            max-width: 470px;
+            margin: 0 auto 24px;
+        }
+        .insta-photo {
+            aspect-ratio: 1 / 1;
+            background: #efefef;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            border-top: 1px solid #efefef;
+            border-bottom: 1px solid #efefef;
+        }
+        .insta-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .publish-btn {
+            background: #0095f6;
+            color: white;
+            font-weight: 600;
+            padding: 12px 16px;
+            border-radius: 8px;
+            transition: all 0.2s;
+        }
+        .publish-btn:hover {
+            background: #1877f2;
+            transform: translateY(-1px);
+        }
+        .verb-tag {
+            background: #f0f2f5;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            color: #00376b;
+            font-weight: 600;
+        }
+        .img-grid-container {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 6px;
+            max-height: 280px;
+            overflow-y: auto;
+            padding: 8px;
+            background: #f8f9fa;
+            border-radius: 12px;
+            border: 1px solid #eee;
+        }
+        .img-wrapper {
+            position: relative;
+            cursor: pointer;
+            aspect-ratio: 1/1;
+            border-radius: 6px;
+            overflow: hidden;
+            transition: transform 0.1s;
+            background: #efefef;
+        }
+        .img-wrapper:hover {
+            transform: scale(0.95);
+        }
+        .img-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .img-wrapper.selected {
+            outline: 4px solid #0095f6;
+            outline-offset: -4px;
+        }
+        .img-wrapper.selected::after {
+            content: '✓';
+            position: absolute;
+            top: 4px;
+            right: 4px;
+            background: #0095f6;
+            color: white;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 10px;
+            font-weight: bold;
+        }
+        #imageSelector::-webkit-scrollbar {
+            width: 6px;
+        }
+        #imageSelector::-webkit-scrollbar-thumb {
+            background: #ccc;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <nav class="sticky top-0 z-50 bg-white border-b border-gray-200 px-6 py-4">
+        <div class="max-w-4xl mx-auto flex justify-between items-center">
+            <div class="text-xl font-bold tracking-tighter italic">OlympicChronicles</div>
+            <div class="hidden md:block text-xs text-slate-400 font-mono tracking-widest uppercase text-right">
+                Riley_Executive_Aide // V5.3<br>
+                <span class="text-[9px]">High-Traffic Asset Bypass</span>
+            </div>
+        </div>
+    </nav>
+
+    <main class="max-w-5xl mx-auto px-6 py-12">
+        
+        <header class="mb-16 text-center">
+            <h1 class="text-5xl md:text-6xl mb-4 text-slate-900 font-semibold italic">The Champion's Feed</h1>
+            <p class="text-lg text-slate-500 font-light max-w-2xl mx-auto">
+                Journalist Lab: Build a 5-10 post story using the <span class="font-bold text-slate-800 underline decoration-blue-200">Preterite Tense</span> to document an athlete's career.
+            </p>
+        </header>
+
+        <section id="presentation" class="mb-24">
+            <div class="flex items-center justify-between mb-8 border-b border-gray-100 pb-4">
+                <h2 class="text-2xl italic font-semibold text-slate-800">Model: Paola Espinosa</h2>
+                <span class="text-xs font-bold text-slate-400 uppercase tracking-widest">Reference Story</span>
+            </div>
+            
+            <div class="canva-wrapper">
+                <iframe loading="lazy" style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; border: none; padding: 0;margin: 0;"
+                    src="https://www.canva.com/design/DAGiLihfLV4/j_mc_9qpZ27k-dU9niuvxg/view?embed" allowfullscreen="allowfullscreen" allow="fullscreen">
+                </iframe>
+            </div>
+        </section>
+
+        <section id="lab" class="mb-24">
+            <div class="flex items-center justify-between mb-8 border-b border-gray-100 pb-4">
+                <h2 class="text-2xl italic font-semibold text-blue-600">Insta-History Engine</h2>
+                <span class="text-xs font-bold text-slate-400 uppercase tracking-widest">Story Creation Mode</span>
+            </div>
+
+            <div class="grid lg:grid-cols-12 gap-8 items-start">
+                
+                <!-- The Builder Form (Col 5) -->
+                <div class="lg:col-span-5 bg-white p-6 rounded-2xl border border-gray-200 shadow-sm sticky top-24">
+                    <h3 class="text-xs font-bold uppercase text-gray-400 mb-4 tracking-widest italic border-b pb-2">New Post Draft</h3>
+                    
+                    <div class="space-y-5">
+                        <!-- Verb -->
+                        <div>
+                            <label class="block text-[10px] font-bold text-gray-700 mb-1 italic uppercase">1. Choose Verb Base</label>
+                            <select id="verbSelect" class="w-full p-2.5 rounded-lg bg-gray-50 border border-gray-200 text-sm outline-none focus:border-blue-500">
+                                <optgroup label="Essential Top 25">
+                                    <option value="ser">Ser (to be)</option>
+                                    <option value="estar">Estar (to be)</option>
+                                    <option value="tener">Tener (to have)</option>
+                                    <option value="hacer">Hacer (to do/make)</option>
+                                    <option value="poder">Poder (can/be able)</option>
+                                    <option value="decir">Decir (to say/tell)</option>
+                                    <option value="ir">Ir (to go)</option>
+                                    <option value="ver">Ver (to see)</option>
+                                    <option value="dar">Dar (to give)</option>
+                                    <option value="saber">Saber (to know info)</option>
+                                    <option value="querer">Querer (to want/love)</option>
+                                    <option value="llegar">Llegar (to arrive/reach)</option>
+                                    <option value="pasar">Pasar (to pass/happen)</option>
+                                    <option value="deber">Deber (must/should)</option>
+                                    <option value="poner">Poner (to put/place)</option>
+                                    <option value="necesitar">Necesitar (to need)</option>
+                                    <option value="quedar">Quedar (to stay/remain)</option>
+                                    <option value="creer">Creer (to believe)</option>
+                                    <option value="hablar">Hablar (to speak)</option>
+                                    <option value="llevar">Llevar (to carry/bring)</option>
+                                    <option value="dejar">Dejar (to leave/let)</option>
+                                    <option value="seguir">Seguir (to follow/continue)</option>
+                                    <option value="encontrar">Encontrar (to find)</option>
+                                    <option value="llamar">Llamar (to call/name)</option>
+                                    <option value="venir">Venir (to come)</option>
+                                </optgroup>
+                                <optgroup label="Action & Sports">
+                                    <option value="ganar">Ganar (to win)</option>
+                                    <option value="lograr">Lograr (to achieve)</option>
+                                    <option value="competir">Competir (to compete)</option>
+                                    <option value="entrenar">Entrenar (to train)</option>
+                                    <option value="romper">Romper (to break a record)</option>
+                                </optgroup>
+                            </select>
+                        </div>
+
+                        <!-- Image Picker -->
+                        <div>
+                            <div class="flex justify-between items-center mb-1">
+                                <label class="block text-[10px] font-bold text-gray-700 italic uppercase">2. Select Image (50 Unique Options)</label>
+                            </div>
+                            <div class="img-grid-container" id="imageSelector">
+                                <!-- JS Populated -->
+                            </div>
+                        </div>
+
+                        <!-- Selected Preview -->
+                        <div class="p-3 bg-blue-50 border border-blue-100 rounded-lg flex items-center gap-4">
+                            <div class="w-12 h-12 rounded border bg-white overflow-hidden flex-shrink-0">
+                                <img id="previewThumb" src="" class="w-full h-full object-cover">
+                            </div>
+                            <div class="text-[10px] text-blue-800 font-bold uppercase" id="previewStatus">Selection Ready</div>
+                        </div>
+
+                        <!-- Caption -->
+                        <div>
+                            <label class="block text-[10px] font-bold text-gray-700 mb-1 italic uppercase">3. Caption (Preterite Tense)</label>
+                            <textarea id="captionInput" placeholder="Ex: Ayer, ella ganó su primera medalla..." class="w-full h-24 p-3 rounded-lg bg-gray-50 border border-gray-200 text-sm focus:border-blue-500 outline-none"></textarea>
+                        </div>
+
+                        <button onclick="publishPost()" class="w-full publish-btn">
+                            Publish to Story
+                        </button>
+                    </div>
+                </div>
+
+                <!-- The Feed (Col 7) -->
+                <div class="lg:col-span-7">
+                    <div class="story-scroll" id="storyFeed">
+                        <div id="feedEmpty" class="text-center py-20 bg-gray-50 border-2 border-dashed border-gray-200 rounded-2xl text-gray-400 italic">
+                            Your feed is currently empty.<br>Select an image and conjugate a verb to begin.
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Phase 3: Review -->
+        <section id="review" class="mb-20">
+            <div class="flex items-center justify-between mb-8 border-b border-gray-100 pb-4">
+                <h2 class="text-2xl italic font-semibold text-slate-800">The Newsroom Swap</h2>
+                <span class="text-xs font-bold text-slate-400 uppercase tracking-widest">Peer Feedback</span>
+            </div>
+
+            <div class="bg-slate-900 text-white p-8 rounded-2xl">
+                <div class="grid md:grid-cols-2 gap-12 text-sm font-light">
+                    <div>
+                        <h4 class="text-blue-400 font-bold uppercase text-[10px] tracking-widest mb-4 italic">Verification</h4>
+                        <p class="text-gray-300 leading-relaxed">
+                            Swap seats. Check your partner's 5-10 posts. Did they use the <strong>Preterite</strong> correctly? Does the story show a clear progression of time?
+                        </p>
+                    </div>
+                    <div>
+                        <h4 class="text-blue-400 font-bold uppercase text-[10px] tracking-widest mb-4 italic">Interaction</h4>
+                        <p class="text-gray-300 leading-relaxed">
+                            "Like" their best post. If you spot an incorrect verb ending (e.g. <em>ganó</em> vs <em>gané</em>), help them fix the "typo" before the final publish.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="py-20 border-t border-gray-100 text-center text-[10px] text-gray-400 font-mono tracking-widest uppercase">
+        Riley Instructional Systems // V5.3 Stable // 2024
+    </footer>
+
+    <script>
+        // Switched to LoremFlickr - much better reliability for educational mass-loading
+        const keywords = ['olympics', 'sport', 'athlete', 'medal', 'running', 'swimming', 'stadium', 'track', 'fitness', 'soccer'];
+
+        let selectedImgSrc = "";
+        let postCount = 0;
+
+        function initPicker() {
+            const container = document.getElementById('imageSelector');
+            container.innerHTML = '';
+            
+            // Populate 50 unique sports images
+            for (let i = 0; i < 50; i++) {
+                const wrapper = document.createElement('div');
+                wrapper.className = 'img-wrapper';
+                
+                // Get a semi-random sports keyword
+                const kw = keywords[i % keywords.length];
+                // Using LoremFlickr which handles mass-requests much better than Unsplash
+                const imgUrl = `https://loremflickr.com/320/320/${kw}?lock=${i}`;
+                
+                wrapper.innerHTML = `<img src="${imgUrl}" loading="lazy">`;
+                wrapper.onclick = () => selectImg(wrapper, imgUrl);
+                
+                container.appendChild(wrapper);
+
+                if (i === 0) selectImg(wrapper, imgUrl);
+            }
+        }
+
+        function selectImg(el, url) {
+            document.querySelectorAll('.img-wrapper').forEach(w => w.classList.remove('selected'));
+            el.classList.add('selected');
+            
+            selectedImgSrc = url;
+            document.getElementById('previewThumb').src = selectedImgSrc;
+            document.getElementById('previewStatus').innerText = "Image Locked In ✓";
+            document.getElementById('previewStatus').classList.remove('text-blue-800');
+            document.getElementById('previewStatus').classList.add('text-green-600');
+        }
+
+        function publishPost() {
+            const caption = document.getElementById('captionInput').value;
+            const verbBase = document.getElementById('verbSelect').value;
+            
+            if (!caption.trim()) {
+                alert("Por favor, escribe un subtítulo (caption) para tu post.");
+                return;
+            }
+
+            postCount++;
+            document.getElementById('feedEmpty').style.display = 'none';
+
+            const post = document.createElement('div');
+            post.className = "insta-card shadow-sm border border-gray-200 overflow-hidden";
+            post.innerHTML = `
+                <div class="p-3 flex items-center justify-between border-b border-gray-50">
+                    <div class="flex items-center gap-2">
+                        <div class="w-8 h-8 rounded-full bg-gradient-to-tr from-yellow-400 via-red-500 to-purple-600 p-[1px]">
+                            <div class="w-full h-full bg-white rounded-full flex items-center justify-center text-[10px] font-bold">🥇</div>
+                        </div>
+                        <span class="text-xs font-bold">periodista_de_oro</span>
+                    </div>
+                    <button onclick="this.closest('.insta-card').remove(); checkEmpty();" class="text-gray-300 hover:text-red-500">✕</button>
+                </div>
+                <div class="insta-photo bg-gray-50">
+                    <img src="${selectedImgSrc}" alt="Story Image">
+                </div>
+                <div class="p-4">
+                    <div class="flex gap-4 mb-3 text-lg">
+                        <span class="cursor-pointer">❤️</span>
+                        <span class="cursor-pointer">💬</span>
+                        <span class="cursor-pointer">✈️</span>
+                    </div>
+                    <div class="text-sm">
+                        <span class="font-bold mr-1">periodista_de_oro</span>
+                        <span class="text-gray-700 leading-relaxed">${caption}</span>
+                    </div>
+                    <div class="mt-4 flex items-center justify-between">
+                        <span class="verb-tag uppercase">Infinitivo: ${verbBase}</span>
+                        <span class="text-[9px] text-gray-400 font-bold uppercase tracking-widest italic">Update #${postCount}</span>
+                    </div>
+                </div>
+            `;
+
+            const feed = document.getElementById('storyFeed');
+            feed.prepend(post);
+            
+            document.getElementById('captionInput').value = '';
+        }
+
+        function checkEmpty() {
+            const feed = document.getElementById('storyFeed');
+            if (feed.querySelectorAll('.insta-card').length === 0) {
+                document.getElementById('feedEmpty').style.display = 'block';
+                postCount = 0;
+            }
+        }
+
+        window.onload = initPicker;
+    </script>
+
+</body>
+</html>
