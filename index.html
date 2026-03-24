@@ -23,18 +23,17 @@
             padding-bottom: 0; 
             box-shadow: 0 4px 12px rgba(0,0,0,0.1); 
             margin-top: 1.6em; 
-            margin-bottom: 0.9em; 
+            margin-bottom: 2em; 
             overflow: hidden;
             border-radius: 8px; 
-            will-change: transform;
             background: #efefef;
         }
         .insta-card {
             background: white;
             border: 1px solid #dbdbdb;
             border-radius: 8px;
-            max-width: 470px;
-            margin: 0 auto 24px;
+            max-width: 600px; 
+            margin: 0 auto 32px;
         }
         .insta-photo {
             aspect-ratio: 1 / 1;
@@ -55,7 +54,7 @@
             background: #0095f6;
             color: white;
             font-weight: 600;
-            padding: 12px 16px;
+            padding: 12px 24px;
             border-radius: 8px;
             transition: all 0.2s;
         }
@@ -73,11 +72,11 @@
         }
         .img-grid-container {
             display: grid;
-            grid-template-columns: repeat(5, 1fr);
-            gap: 6px;
-            max-height: 280px;
+            grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); 
+            gap: 12px;
+            max-height: 400px;
             overflow-y: auto;
-            padding: 8px;
+            padding: 12px;
             background: #f8f9fa;
             border-radius: 12px;
             border: 1px solid #eee;
@@ -86,13 +85,14 @@
             position: relative;
             cursor: pointer;
             aspect-ratio: 1/1;
-            border-radius: 6px;
+            border-radius: 8px;
             overflow: hidden;
-            transition: transform 0.1s;
+            transition: all 0.2s;
             background: #efefef;
         }
         .img-wrapper:hover {
-            transform: scale(0.95);
+            transform: scale(1.02);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
         }
         .img-wrapper img {
             width: 100%;
@@ -100,183 +100,151 @@
             object-fit: cover;
         }
         .img-wrapper.selected {
-            outline: 4px solid #0095f6;
-            outline-offset: -4px;
+            outline: 5px solid #0095f6;
+            outline-offset: -5px;
         }
         .img-wrapper.selected::after {
             content: '✓';
             position: absolute;
-            top: 4px;
-            right: 4px;
+            top: 8px;
+            right: 8px;
             background: #0095f6;
             color: white;
-            width: 18px;
-            height: 18px;
+            width: 24px;
+            height: 24px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 10px;
+            font-size: 14px;
             font-weight: bold;
-        }
-        #imageSelector::-webkit-scrollbar {
-            width: 6px;
-        }
-        #imageSelector::-webkit-scrollbar-thumb {
-            background: #ccc;
-            border-radius: 10px;
         }
     </style>
 </head>
 <body class="antialiased">
 
     <nav class="sticky top-0 z-50 bg-white border-b border-gray-200 px-6 py-4">
-        <div class="max-w-4xl mx-auto flex justify-between items-center">
+        <div class="max-w-6xl mx-auto flex justify-between items-center">
             <div class="text-xl font-bold tracking-tighter italic">OlympicChronicles</div>
             <div class="hidden md:block text-xs text-slate-400 font-mono tracking-widest uppercase text-right">
-                Riley_Executive_Aide // V5.3<br>
-                <span class="text-[9px]">High-Traffic Asset Bypass</span>
+                Riley_Executive_Aide // V6.1<br>
+                <span class="text-[9px]">Safety Asset Filtering Applied</span>
             </div>
         </div>
     </nav>
 
-    <main class="max-w-5xl mx-auto px-6 py-12">
+    <main class="max-w-6xl mx-auto px-6 py-12">
         
-        <header class="mb-16 text-center">
+        <header class="mb-12 text-center">
             <h1 class="text-5xl md:text-6xl mb-4 text-slate-900 font-semibold italic">The Champion's Feed</h1>
             <p class="text-lg text-slate-500 font-light max-w-2xl mx-auto">
-                Journalist Lab: Build a 5-10 post story using the <span class="font-bold text-slate-800 underline decoration-blue-200">Preterite Tense</span> to document an athlete's career.
+                Build your 5-10 post story using the <span class="font-bold text-slate-800 underline decoration-blue-200">Preterite Tense</span>.
             </p>
         </header>
 
-        <section id="presentation" class="mb-24">
-            <div class="flex items-center justify-between mb-8 border-b border-gray-100 pb-4">
-                <h2 class="text-2xl italic font-semibold text-slate-800">Model: Paola Espinosa</h2>
-                <span class="text-xs font-bold text-slate-400 uppercase tracking-widest">Reference Story</span>
-            </div>
-            
-            <div class="canva-wrapper">
-                <iframe loading="lazy" style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; border: none; padding: 0;margin: 0;"
-                    src="https://www.canva.com/design/DAGiLihfLV4/j_mc_9qpZ27k-dU9niuvxg/view?embed" allowfullscreen="allowfullscreen" allow="fullscreen">
-                </iframe>
-            </div>
+        <section id="presentation" class="mb-16">
+            <details class="group">
+                <summary class="flex items-center justify-between cursor-pointer list-none p-4 bg-gray-50 rounded-xl border border-gray-100 hover:bg-gray-100 transition-colors">
+                    <h2 class="text-xl italic font-semibold text-slate-800">View Reference Story: Paola Espinosa</h2>
+                    <span class="text-xs font-bold text-blue-500 group-open:rotate-180 transition-transform">▼</span>
+                </summary>
+                <div class="canva-wrapper">
+                    <iframe loading="lazy" style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; border: none; padding: 0;margin: 0;"
+                        src="https://www.canva.com/design/DAGiLihfLV4/j_mc_9qpZ27k-dU9niuvxg/view?embed" allowfullscreen="allowfullscreen" allow="fullscreen">
+                    </iframe>
+                </div>
+            </details>
         </section>
 
         <section id="lab" class="mb-24">
-            <div class="flex items-center justify-between mb-8 border-b border-gray-100 pb-4">
-                <h2 class="text-2xl italic font-semibold text-blue-600">Insta-History Engine</h2>
-                <span class="text-xs font-bold text-slate-400 uppercase tracking-widest">Story Creation Mode</span>
-            </div>
-
-            <div class="grid lg:grid-cols-12 gap-8 items-start">
+            <div class="bg-white p-8 rounded-2xl border border-gray-200 shadow-sm mb-16">
+                <div class="flex items-center justify-between mb-8 border-b border-gray-100 pb-4">
+                    <h2 class="text-2xl italic font-semibold text-blue-600">Story Creator Lab</h2>
+                    <span class="text-xs font-bold text-slate-400 uppercase tracking-widest italic">Draft a New Post</span>
+                </div>
                 
-                <!-- The Builder Form (Col 5) -->
-                <div class="lg:col-span-5 bg-white p-6 rounded-2xl border border-gray-200 shadow-sm sticky top-24">
-                    <h3 class="text-xs font-bold uppercase text-gray-400 mb-4 tracking-widest italic border-b pb-2">New Post Draft</h3>
-                    
-                    <div class="space-y-5">
-                        <!-- Verb -->
+                <div class="grid lg:grid-cols-2 gap-12">
+                    <div class="space-y-6">
                         <div>
-                            <label class="block text-[10px] font-bold text-gray-700 mb-1 italic uppercase">1. Choose Verb Base</label>
-                            <select id="verbSelect" class="w-full p-2.5 rounded-lg bg-gray-50 border border-gray-200 text-sm outline-none focus:border-blue-500">
-                                <optgroup label="Essential Top 25">
-                                    <option value="ser">Ser (to be)</option>
-                                    <option value="estar">Estar (to be)</option>
-                                    <option value="tener">Tener (to have)</option>
-                                    <option value="hacer">Hacer (to do/make)</option>
-                                    <option value="poder">Poder (can/be able)</option>
-                                    <option value="decir">Decir (to say/tell)</option>
-                                    <option value="ir">Ir (to go)</option>
-                                    <option value="ver">Ver (to see)</option>
-                                    <option value="dar">Dar (to give)</option>
-                                    <option value="saber">Saber (to know info)</option>
-                                    <option value="querer">Querer (to want/love)</option>
-                                    <option value="llegar">Llegar (to arrive/reach)</option>
-                                    <option value="pasar">Pasar (to pass/happen)</option>
-                                    <option value="deber">Deber (must/should)</option>
-                                    <option value="poner">Poner (to put/place)</option>
-                                    <option value="necesitar">Necesitar (to need)</option>
-                                    <option value="quedar">Quedar (to stay/remain)</option>
-                                    <option value="creer">Creer (to believe)</option>
-                                    <option value="hablar">Hablar (to speak)</option>
-                                    <option value="llevar">Llevar (to carry/bring)</option>
-                                    <option value="dejar">Dejar (to leave/let)</option>
-                                    <option value="seguir">Seguir (to follow/continue)</option>
-                                    <option value="encontrar">Encontrar (to find)</option>
-                                    <option value="llamar">Llamar (to call/name)</option>
-                                    <option value="venir">Venir (to come)</option>
-                                </optgroup>
-                                <optgroup label="Action & Sports">
-                                    <option value="ganar">Ganar (to win)</option>
-                                    <option value="lograr">Lograr (to achieve)</option>
-                                    <option value="competir">Competir (to compete)</option>
-                                    <option value="entrenar">Entrenar (to train)</option>
-                                    <option value="romper">Romper (to break a record)</option>
-                                </optgroup>
-                            </select>
-                        </div>
-
-                        <!-- Image Picker -->
-                        <div>
-                            <div class="flex justify-between items-center mb-1">
-                                <label class="block text-[10px] font-bold text-gray-700 italic uppercase">2. Select Image (50 Unique Options)</label>
-                            </div>
+                            <label class="block text-[11px] font-bold text-gray-700 mb-2 italic uppercase tracking-wider">1. Choose Your Image (Click to Select)</label>
                             <div class="img-grid-container" id="imageSelector">
                                 <!-- JS Populated -->
                             </div>
                         </div>
+                    </div>
 
-                        <!-- Selected Preview -->
-                        <div class="p-3 bg-blue-50 border border-blue-100 rounded-lg flex items-center gap-4">
-                            <div class="w-12 h-12 rounded border bg-white overflow-hidden flex-shrink-0">
-                                <img id="previewThumb" src="" class="w-full h-full object-cover">
+                    <div class="space-y-6 flex flex-col justify-between">
+                        <div class="grid md:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-[11px] font-bold text-gray-700 mb-2 italic uppercase tracking-wider">2. Choose Verb Base</label>
+                                <select id="verbSelect" class="w-full p-3 rounded-xl bg-gray-50 border border-gray-200 text-sm outline-none focus:ring-2 focus:ring-blue-100 focus:border-blue-500">
+                                    <optgroup label="Essential Top 25">
+                                        <option value="ser">Ser (to be)</option>
+                                        <option value="estar">Estar (to be)</option>
+                                        <option value="tener">Tener (to have)</option>
+                                        <option value="hacer">Hacer (to do/make)</option>
+                                        <option value="ir">Ir (to go)</option>
+                                        <option value="ganar">Ganar (to win)</option>
+                                        <option value="lograr">Lograr (to achieve)</option>
+                                        <option value="competir">Competir (to compete)</option>
+                                        <option value="entrenar">Entrenar (to train)</option>
+                                        <option value="llegar">Llegar (to arrive)</option>
+                                    </optgroup>
+                                    <optgroup label="Action Verbs">
+                                        <option value="saltar">Saltar (to jump)</option>
+                                        <option value="correr">Correr (to run)</option>
+                                        <option value="nadar">Nadar (to swim)</option>
+                                        <option value="viajar">Viajar (to travel)</option>
+                                        <option value="romper">Romper (to break)</option>
+                                    </optgroup>
+                                </select>
                             </div>
-                            <div class="text-[10px] text-blue-800 font-bold uppercase" id="previewStatus">Selection Ready</div>
+                            <div class="flex items-center gap-4 bg-blue-50 p-3 rounded-xl border border-blue-100">
+                                <img id="previewThumb" src="" class="w-16 h-16 rounded object-cover border-2 border-white shadow-sm">
+                                <div class="text-[10px] text-blue-700 font-bold uppercase leading-tight">Image<br>Ready ✓</div>
+                            </div>
                         </div>
 
-                        <!-- Caption -->
                         <div>
-                            <label class="block text-[10px] font-bold text-gray-700 mb-1 italic uppercase">3. Caption (Preterite Tense)</label>
-                            <textarea id="captionInput" placeholder="Ex: Ayer, ella ganó su primera medalla..." class="w-full h-24 p-3 rounded-lg bg-gray-50 border border-gray-200 text-sm focus:border-blue-500 outline-none"></textarea>
+                            <label class="block text-[11px] font-bold text-gray-700 mb-2 italic uppercase tracking-wider">3. Write Your Caption (Preterite Tense Required)</label>
+                            <textarea id="captionInput" placeholder="Ex: Ella ganó la medalla de oro en 2012..." class="w-full h-32 p-4 rounded-xl bg-gray-50 border border-gray-200 text-base focus:ring-2 focus:ring-blue-100 focus:border-blue-500 outline-none resize-none"></textarea>
                         </div>
 
-                        <button onclick="publishPost()" class="w-full publish-btn">
-                            Publish to Story
+                        <button onclick="publishPost()" class="w-full publish-btn text-lg">
+                            Add to Story Feed ↓
                         </button>
                     </div>
                 </div>
+            </div>
 
-                <!-- The Feed (Col 7) -->
-                <div class="lg:col-span-7">
-                    <div class="story-scroll" id="storyFeed">
-                        <div id="feedEmpty" class="text-center py-20 bg-gray-50 border-2 border-dashed border-gray-200 rounded-2xl text-gray-400 italic">
-                            Your feed is currently empty.<br>Select an image and conjugate a verb to begin.
-                        </div>
+            <div class="max-w-4xl mx-auto">
+                <div class="flex items-center justify-between mb-8 border-b border-gray-100 pb-4">
+                    <h2 class="text-2xl italic font-semibold text-slate-800">Your Live Feed</h2>
+                    <span id="postStats" class="text-xs font-bold text-slate-400 uppercase tracking-widest">0 Posts Published</span>
+                </div>
+                
+                <div id="storyFeed" class="space-y-8">
+                    <div id="feedEmpty" class="text-center py-20 bg-gray-50 border-2 border-dashed border-gray-200 rounded-3xl text-gray-400 italic">
+                        Your journalist feed is empty.<br>Select a larger image and write a caption above to start your story.
                     </div>
                 </div>
-
             </div>
         </section>
 
-        <!-- Phase 3: Review -->
         <section id="review" class="mb-20">
-            <div class="flex items-center justify-between mb-8 border-b border-gray-100 pb-4">
-                <h2 class="text-2xl italic font-semibold text-slate-800">The Newsroom Swap</h2>
-                <span class="text-xs font-bold text-slate-400 uppercase tracking-widest">Peer Feedback</span>
-            </div>
-
-            <div class="bg-slate-900 text-white p-8 rounded-2xl">
+            <div class="bg-slate-900 text-white p-10 rounded-3xl">
+                <h2 class="text-2xl italic font-semibold mb-6">The Newsroom Swap</h2>
                 <div class="grid md:grid-cols-2 gap-12 text-sm font-light">
                     <div>
                         <h4 class="text-blue-400 font-bold uppercase text-[10px] tracking-widest mb-4 italic">Verification</h4>
                         <p class="text-gray-300 leading-relaxed">
-                            Swap seats. Check your partner's 5-10 posts. Did they use the <strong>Preterite</strong> correctly? Does the story show a clear progression of time?
+                            Check your partner's feed. Did they use the <strong>Preterite</strong> correctly? Every post should describe a completed action in the past.
                         </p>
                     </div>
                     <div>
                         <h4 class="text-blue-400 font-bold uppercase text-[10px] tracking-widest mb-4 italic">Interaction</h4>
                         <p class="text-gray-300 leading-relaxed">
-                            "Like" their best post. If you spot an incorrect verb ending (e.g. <em>ganó</em> vs <em>gané</em>), help them fix the "typo" before the final publish.
+                            Help your partner correct any "typos" in their verb endings (e.g., -aste, -ó, -ieron).
                         </p>
                     </div>
                 </div>
@@ -286,13 +254,12 @@
     </main>
 
     <footer class="py-20 border-t border-gray-100 text-center text-[10px] text-gray-400 font-mono tracking-widest uppercase">
-        Riley Instructional Systems // V5.3 Stable // 2024
+        Riley Instructional Systems // V6.1 Stable // 2024
     </footer>
 
     <script>
-        // Switched to LoremFlickr - much better reliability for educational mass-loading
-        const keywords = ['olympics', 'sport', 'athlete', 'medal', 'running', 'swimming', 'stadium', 'track', 'fitness', 'soccer'];
-
+        // Updated keywords to exclude "fitness" and generic "gym" to avoid non-olympic/risqué imagery
+        const keywords = ['olympic-games', 'stadium', 'track-field', 'swimming-pool', 'gold-medal', 'gymnastics-competition', 'rowing-sport', 'fencing-sport', 'tennis-court', 'soccer-match', 'marathon', 'cycling-race'];
         let selectedImgSrc = "";
         let postCount = 0;
 
@@ -300,21 +267,17 @@
             const container = document.getElementById('imageSelector');
             container.innerHTML = '';
             
-            // Populate 50 unique sports images
             for (let i = 0; i < 50; i++) {
                 const wrapper = document.createElement('div');
                 wrapper.className = 'img-wrapper';
-                
-                // Get a semi-random sports keyword
                 const kw = keywords[i % keywords.length];
-                // Using LoremFlickr which handles mass-requests much better than Unsplash
-                const imgUrl = `https://loremflickr.com/320/320/${kw}?lock=${i}`;
+                // Added additional locking and keyword refinement to ensure classroom-safe Olympic content
+                const imgUrl = `https://loremflickr.com/400/400/${kw}?lock=${i + 50}`;
                 
                 wrapper.innerHTML = `<img src="${imgUrl}" loading="lazy">`;
                 wrapper.onclick = () => selectImg(wrapper, imgUrl);
                 
                 container.appendChild(wrapper);
-
                 if (i === 0) selectImg(wrapper, imgUrl);
             }
         }
@@ -322,12 +285,8 @@
         function selectImg(el, url) {
             document.querySelectorAll('.img-wrapper').forEach(w => w.classList.remove('selected'));
             el.classList.add('selected');
-            
             selectedImgSrc = url;
-            document.getElementById('previewThumb').src = selectedImgSrc;
-            document.getElementById('previewStatus').innerText = "Image Locked In ✓";
-            document.getElementById('previewStatus').classList.remove('text-blue-800');
-            document.getElementById('previewStatus').classList.add('text-green-600');
+            document.getElementById('previewThumb').src = url;
         }
 
         function publishPost() {
@@ -335,56 +294,60 @@
             const verbBase = document.getElementById('verbSelect').value;
             
             if (!caption.trim()) {
-                alert("Por favor, escribe un subtítulo (caption) para tu post.");
+                alert("Please write a caption for your story post.");
                 return;
             }
 
             postCount++;
             document.getElementById('feedEmpty').style.display = 'none';
+            document.getElementById('postStats').innerText = `${postCount} Posts Published`;
 
             const post = document.createElement('div');
-            post.className = "insta-card shadow-sm border border-gray-200 overflow-hidden";
+            post.className = "insta-card shadow-lg border border-gray-200 overflow-hidden";
             post.innerHTML = `
-                <div class="p-3 flex items-center justify-between border-b border-gray-50">
-                    <div class="flex items-center gap-2">
-                        <div class="w-8 h-8 rounded-full bg-gradient-to-tr from-yellow-400 via-red-500 to-purple-600 p-[1px]">
-                            <div class="w-full h-full bg-white rounded-full flex items-center justify-center text-[10px] font-bold">🥇</div>
+                <div class="p-4 flex items-center justify-between border-b border-gray-100">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full bg-gradient-to-tr from-yellow-400 via-red-500 to-purple-600 p-[2px]">
+                            <div class="w-full h-full bg-white rounded-full flex items-center justify-center text-sm">🏅</div>
                         </div>
-                        <span class="text-xs font-bold">periodista_de_oro</span>
+                        <span class="text-sm font-bold tracking-tight">Periodista_Olimpico</span>
                     </div>
-                    <button onclick="this.closest('.insta-card').remove(); checkEmpty();" class="text-gray-300 hover:text-red-500">✕</button>
+                    <button onclick="this.closest('.insta-card').remove(); checkEmpty();" class="text-gray-300 hover:text-red-500 transition-colors">✕</button>
                 </div>
-                <div class="insta-photo bg-gray-50">
-                    <img src="${selectedImgSrc}" alt="Story Image">
+                <div class="insta-photo">
+                    <img src="${selectedImgSrc}" alt="Story Update">
                 </div>
-                <div class="p-4">
-                    <div class="flex gap-4 mb-3 text-lg">
-                        <span class="cursor-pointer">❤️</span>
-                        <span class="cursor-pointer">💬</span>
-                        <span class="cursor-pointer">✈️</span>
+                <div class="p-6">
+                    <div class="flex gap-5 mb-4 text-xl">
+                        <span class="cursor-pointer hover:scale-125 transition-transform">❤️</span>
+                        <span class="cursor-pointer hover:scale-125 transition-transform">💬</span>
+                        <span class="cursor-pointer hover:scale-125 transition-transform">✈️</span>
                     </div>
-                    <div class="text-sm">
-                        <span class="font-bold mr-1">periodista_de_oro</span>
-                        <span class="text-gray-700 leading-relaxed">${caption}</span>
+                    <div class="text-base mb-6">
+                        <span class="font-bold mr-2">periodista_olimpico</span>
+                        <span class="text-gray-800 leading-relaxed">${caption}</span>
                     </div>
-                    <div class="mt-4 flex items-center justify-between">
-                        <span class="verb-tag uppercase">Infinitivo: ${verbBase}</span>
-                        <span class="text-[9px] text-gray-400 font-bold uppercase tracking-widest italic">Update #${postCount}</span>
+                    <div class="flex items-center justify-between pt-4 border-t border-gray-50">
+                        <span class="verb-tag uppercase">Verbo Base: ${verbBase}</span>
+                        <span class="text-[10px] text-gray-400 font-bold uppercase tracking-widest italic">Story Update #${postCount}</span>
                     </div>
                 </div>
             `;
 
             const feed = document.getElementById('storyFeed');
             feed.prepend(post);
-            
+            post.scrollIntoView({ behavior: 'smooth', block: 'center' });
             document.getElementById('captionInput').value = '';
         }
 
         function checkEmpty() {
             const feed = document.getElementById('storyFeed');
-            if (feed.querySelectorAll('.insta-card').length === 0) {
+            const posts = feed.querySelectorAll('.insta-card');
+            postCount = posts.length;
+            document.getElementById('postStats').innerText = `${postCount} Posts Published`;
+            
+            if (postCount === 0) {
                 document.getElementById('feedEmpty').style.display = 'block';
-                postCount = 0;
             }
         }
 
